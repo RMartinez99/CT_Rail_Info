@@ -1,5 +1,5 @@
 import sys
-
+from sendStatToHTML import HtmlManager
 major_stations = {"NYG": "Grand Central",
 "NYP" : "New York Penn Station",
 "125" : "Harlem - 125th Street", 
@@ -25,22 +25,17 @@ class Menu:
   def __init__(self, major_stations):
     self.stations = major_stations
     self.showMenu()
+    
   
   def showMenu(self):
     code = input("Please enter a station code for a MAJOR New Haven Line station.\n")
     while code not in self.stations:
         print("ERROR: Not in Database or is not a major/terminal station")
         code = input("")
-    print(f"Welcome to {self.stations[code]}. Please choose an option below.")
-    print(""" 
-                1. Create Timetable
-                2. Modify Timetable
-                3. Delete Timetable
-                4. Show Timetables
-                Any other key: Exit program
-   
-               """)
-  
+    print(f"Sending station {self.stations[code]} to timetable making department.")
+    self.manager = HtmlManager(self.stations[code])
+    self.manager.create_html()
+    self.manager.save_html_file()
     
    
 
