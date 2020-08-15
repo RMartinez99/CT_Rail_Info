@@ -40,17 +40,7 @@ class Menu:
                 Any other key: Exit program
    
                """)
-    choices = input("")
-    if choices == "1":
-        pass
-    elif choices == "2":
-        pass
-    elif choices == "3":
-        pass
-    elif choices == "4":
-        pass
-    else:
-        sys.exit(0)
+  
     
    
 
