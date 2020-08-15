@@ -38,7 +38,7 @@ class Menu:
     self.manager.create_html()
     self.manager.save_html_file()
     self.aws = AWSmanager()
-    
+    self.aws.save_to_s3()
     
    
 
