@@ -35,12 +35,15 @@ class HtmlManager:
 
 
 class AWSmanager:
-   s3 = boto3.client('s3')
-   def save_to_s3(self):
-     boto3.client('s3').upload_file('station.html', 'lmtd-class', 'heyclass.html')
+    def __init__(self):
+        pass
+    def save_to_s3(self):
+        s3 = boto3.client('s3')
+        boto3.client('s3').upload_file('station.html', 'lmtd-class', 'raymond.html')
 
 #manager = HtmlManager(station)
 #manager.create_html()
 #manager.save_html_file()
-
+aws = AWSmanager()
+aws.save_to_s3()
 

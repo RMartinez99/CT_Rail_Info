@@ -1,5 +1,6 @@
 import sys
 from sendStatToHTML import HtmlManager
+from sendStatToHTML import AWSmanager
 major_stations = {"NYG": "Grand Central",
 "NYP" : "New York Penn Station",
 "125" : "Harlem - 125th Street", 
@@ -36,6 +37,8 @@ class Menu:
     self.manager = HtmlManager(self.stations[code])
     self.manager.create_html()
     self.manager.save_html_file()
+    self.aws = AWSmanager()
+    
     
    
 
