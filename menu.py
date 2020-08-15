@@ -37,9 +37,21 @@ class Menu:
                 2. Modify Timetable
                 3. Delete Timetable
                 4. Show Timetables
-                5. Exit program
+                Any other key: Exit program
    
                """)
+    choices = input("")
+    if choices == "1":
+        pass
+    elif choices == "2":
+        pass
+    elif choices == "3":
+        pass
+    elif choices == "4":
+        pass
+    else:
+        sys.exit(0)
+    
    
 
     
