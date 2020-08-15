@@ -27,12 +27,10 @@ class Menu:
     self.showMenu()
   
   def showMenu(self):
-    try:
-        code = input("Please enter a station code for a MAJOR New Haven Line station.\n")
-    except:
-        while code not in self.stations:
-            raise KeyError("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\n The station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
-            code = input("")
+    code = input("Please enter a station code for a MAJOR New Haven Line station.\n")
+    while code not in self.stations:
+        print("ERROR: Not in Database or is not a major/terminal station")
+        code = input("")
     print(f"Welcome to {self.stations[code]}. Please choose an option below.")
     print(""" 
                 1. Create Timetable
