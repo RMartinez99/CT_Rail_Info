@@ -39,6 +39,7 @@ class Menu:
     self.manager.save_html_file()
     self.aws = AWSmanager()
     self.aws.save_to_s3()
+    self.aws.listBucketFile("lmtd-class")
     
    
 
